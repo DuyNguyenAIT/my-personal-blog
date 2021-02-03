@@ -102,14 +102,9 @@
                         <li><a class="nav-link" title="Archives" href="#">Archives</a></li>
                         <li class="dropdown">
                             <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link dropdown-toggle" title="About Us" href="aboutus.html">About Us</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="aboutus_fullwidth.html" title="About Us No sidebar">About Us No sidebar</a></li>
-                                <li><a class="dropdown-item" href="aboutme.html" title="About Me">About Me</a></li>
-                                <li><a class="dropdown-item" href="aboutme_fullwidth.html" title="About Me No sidebar">About Me No sidebar</a></li>
-                            </ul>
+                            <a class="nav-link" title="About Us" [routerLink]="['/about-us']" routerLinkActive="router-link-active">About Us</a>
                         </li>
-                        <li><a class="nav-link" title="Contact" href="contact-us.html">Contact</a></li>
+                        <li><a class="nav-link" title="Contact" [routerLink]="['/contact-us']" routerLinkActive="router-link-active">Contact</a></li>
                     </ul>
                 </div>
                 <div id="loginpanel-4" class="desktop-hide">
