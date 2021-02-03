@@ -2,11 +2,9 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { ClientRoutingModule } from './client-routing.module';
-import { SignUpComponent } from './sign-up/sign-up.component';
-
 
 @NgModule({
-  declarations: [SignUpComponent],
+  declarations: [ClientRoutingModule.components],
   imports: [
     CommonModule,
     ClientRoutingModule
