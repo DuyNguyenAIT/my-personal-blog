@@ -11,8 +11,8 @@
         </div>
         <div class="entry-content">
           <div class="entry-header">
-            <span class="post-category"><a href="#" title="Lifestyle">Lifestyle</a></span>
-            <h3 class="entry-title"><a href="#" title="Trendy Summer Fashion">Trendy Summer Fashion</a></h3>
+            <span class="post-category"><a title="Lifestyle">Lifestyle</a></span>
+            <h3 class="entry-title"><a [routerLink]="['/post', post.id]" (click)="gotoDetails(post.id)" title="Trendy Summer Fashion">Trendy Summer Fashion</a></h3>
           </div>
           <p>These cases are perfectly simple and easy to distinguish. In a free hour, when our power of
             choice is untrammelled and when nothing prevents our being able to do what we like best, every

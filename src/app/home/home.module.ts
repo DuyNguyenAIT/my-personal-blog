@@ -8,12 +8,25 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { TestimonialComponent } from './components/testimonial/testimonial.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { SliderComponent } from './components/slider/slider.component';
-import { ContentAreaComponent } from './components/content-area/content-area.component';
 import { PaginationComponent } from './components/right/pagination/pagination.component';
 import { WidgetComponent } from './components/right/widget/widget.component';
+import { PostsComponent } from './components/posts/posts.component';
+import { PostDetailComponent } from './components/post-detail/post-detail.component';
 
 @NgModule({
-  declarations: [HomeLayoutComponent, AboutUsComponent, ContactUsComponent, TestimonialComponent, HomePageComponent, SliderComponent, ContentAreaComponent, PaginationComponent, WidgetComponent],
+  declarations: 
+  [
+    HomeLayoutComponent, 
+    AboutUsComponent, 
+    ContactUsComponent, 
+    TestimonialComponent, 
+    HomePageComponent, 
+    SliderComponent, 
+    PaginationComponent, 
+    WidgetComponent, 
+    PostsComponent, 
+    PostDetailComponent
+  ],
   imports: [
     CommonModule,
     HomeRoutingModule
