@@ -46,11 +46,20 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbar7">
                     <ul class="navbar-nav">
-                        <li class="dropdown">
+                        <li class="dropdown" *ngFor="let item of (category | async)">
                             <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link" title="Home" [routerLink]="['/']" routerLinkActive="router-link-active">Trang chủ</a>  
+                            <a class="nav-link dropdown-toggle" title="Posts" href="#">{{item.categoryName}}</a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="blog-single.html" title="Blog Post">Blog Post</a></li>
+                                <li><a class="dropdown-item" href="blog-single-cover-containr-full.html" title="Blog Post 2">Blog Post 2</a></li>
+                                <li><a class="dropdown-item" href="blog-single-cover-full.html" title="Blog Post 3">Blog Post 3</a></li>
+                                <li><a class="dropdown-item" href="blog-single-no-sidebar.html" title="Post No Sidebar">Post No Sidebar</a></li>
+                                <li><a class="dropdown-item" href="blog-single-no-sidebar-2.html" title="Post No Sidebar 2">Post No Sidebar 2</a></li>
+                                <li><a class="dropdown-item" href="blog-single-no-sidebar-3.html" title="Post No Sidebar 3">Post No Sidebar 3</a></li>
+                            </ul>
                         </li>
-                        <li class="dropdown">
+
+                        <!-- <li class="dropdown">
                             <i class="ddl-switch fa fa-angle-down"></i>
                             <a class="nav-link dropdown-toggle" title="Posts" href="#">Bài viết hay</a>
                             <ul class="dropdown-menu">
@@ -62,6 +71,7 @@
                                 <li><a class="dropdown-item" href="blog-single-no-sidebar-3.html" title="Post No Sidebar 3">Post No Sidebar 3</a></li>
                             </ul>
                         </li>
+
                         <li class="dropdown">
                             <i class="ddl-switch fa fa-angle-down"></i>
                             <a class="nav-link dropdown-toggle" title="Pages" href="#">Chia sẻ công nghệ</a>
@@ -93,7 +103,9 @@
                             <i class="ddl-switch fa fa-angle-down"></i>
                             <a class="nav-link" title="About Us" [routerLink]="['/about-us']" routerLinkActive="router-link-active">Thông tin</a>
                         </li>
-                        <li><a class="nav-link" title="Contact" [routerLink]="['/contact-us']" routerLinkActive="router-link-active">Liên hệ</a></li>
+                        <li>
+                            <a class="nav-link" title="Contact" [routerLink]="['/contact-us']" routerLinkActive="router-link-active">Liên hệ</a>
+                        </li> -->
                     </ul>
                 </div>
                 <div id="loginpanel-4" class="desktop-hide">
