@@ -30,6 +30,12 @@ import { PostDetailComponent } from './components/post-detail/post-detail.compon
   imports: [
     CommonModule,
     HomeRoutingModule
+  ],
+  entryComponents: [
+    AboutUsComponent, 
+    ContactUsComponent, 
+    PostsComponent, 
+    PostDetailComponent
   ]
 })
 export class HomeModule { }

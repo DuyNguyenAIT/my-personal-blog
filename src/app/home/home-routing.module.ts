@@ -13,6 +13,10 @@ const routes: Routes = [
     component: HomeLayoutComponent,
     children: [
       {
+        path: "",
+        component: HomePageComponent
+      },
+      {
         path: "about-us",
         component: AboutUsComponent
       },
@@ -20,18 +24,15 @@ const routes: Routes = [
         path: "contact-us",
         component: ContactUsComponent
       },
-      {
-        path: "",
-        component: HomePageComponent
-      },
+
       {
         path: "post/:id",
         component: PostDetailComponent
       },
-     
+
     ],
   },
-  
+
 ];
 
 @NgModule({
