@@ -7,7 +7,6 @@ import { NotFound404Component } from './components/not-found404/not-found404.com
 import { ScollToTopComponent } from './components/scoll-to-top/scoll-to-top.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from "@angular/common/http";
-import { BaseService } from './services/base.service';
 import { EnsureModuleLoadedOnceGuard } from './guards/ensure-module-loaded-once.guard';
 import { UtilityService } from './utilities/utility.service';
 
@@ -23,7 +22,7 @@ import { UtilityService } from './utilities/utility.service';
   ],
   imports: [CommonModule, RouterModule, HttpClientModule],
   exports: [HttpClientModule],
-  providers: [BaseService, UtilityService]
+  providers: [UtilityService]
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {
   // Looks for the module in the parent injector to see if it's already been loaded (only want it loaded once)

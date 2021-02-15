@@ -1,6 +1,8 @@
+import { error } from '@angular/compiler/src/util';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
+import { Category } from '../../entities/category';
+import { CategoryService } from '../../services/category.service';
 
 @Component({
   selector: 'app-header',
@@ -9,13 +11,25 @@ import { Observable } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor(private router: Router) {
-    
+  categories: Category[] = [];
+  subCategories: Category[] = [];
+
+  constructor(private categoryService: CategoryService) {
+    this.getCategories();
    }
 
   ngOnInit(): void {
 
   }
 
+  getCategories(): void {
+    this.categoryService.getCategories().subscribe(data => {
+      this.categories = data; 
+      //console.log(data);
+    });
+  }
 
+  filterSubById(id:any) {
+    return this.categories.filter(item => item.parentId === id);
+  }
 }

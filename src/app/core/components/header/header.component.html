@@ -23,9 +23,9 @@
                             <li class="dropdown">
                                 <a class="dropdown-toggle" href="#"><i class="pe-7s-user"></i></a>
                                 <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" [routerLink]="['/auth/login']" routerLinkActive="router-link-active" title="Log in">Log In</a></li>
+                                    <li><a class="dropdown-item" [routerLink]="['/']" routerLinkActive="router-link-active" title="Log in">Log In</a></li>
                                     <li><a class="dropdown-item" href="#" title="Subscribe">Subscribe </a></li>
-                                    <li><a class="dropdown-item" [routerLink]="['/client/signup']" routerLinkActive="router-link-active" title="Sign up">Sign Up</a></li>
+                                    <li><a class="dropdown-item" [routerLink]="['/']" routerLinkActive="router-link-active" title="Sign up">Sign Up</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -44,68 +44,21 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbar7" aria-controls="navbar7" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars"></i>
                 </button>
-                <div class="collapse navbar-collapse" id="navbar7">
+                <div class="collapse navbar-collapse" id="navbar7" style="margin-left: 120px;">
                     <ul class="navbar-nav">
-                        <li class="dropdown">
+                        <li class="dropdown" *ngFor="let item of categories">
                             <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link " title="Posts">Test</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="blog-single.html" title="Blog Post">Blog Post</a></li>
-                                <li><a class="dropdown-item" href="blog-single-cover-containr-full.html" title="Blog Post 2">Blog Post 2</a></li>
-                                <li><a class="dropdown-item" href="blog-single-cover-full.html" title="Blog Post 3">Blog Post 3</a></li>
-                                <li><a class="dropdown-item" href="blog-single-no-sidebar.html" title="Post No Sidebar">Post No Sidebar</a></li>
-                                <li><a class="dropdown-item" href="blog-single-no-sidebar-2.html" title="Post No Sidebar 2">Post No Sidebar 2</a></li>
-                                <li><a class="dropdown-item" href="blog-single-no-sidebar-3.html" title="Post No Sidebar 3">Post No Sidebar 3</a></li>
-                            </ul>
+                            <a *ngIf="item.parentId == 0" 
+                            class="nav-link dropdown-toggle"
+                            title="{{item.categoryName}}" 
+                            routerLink="{{item.categogyRouterLink}}" 
+                            routerLinkActive="router-link-active">{{item.categoryName}}</a>
+                            <ul class="dropdown-menu" >
+                                <li *ngFor="let subcategory of filterSubById(item.categoryId)" >
+                                    <a class="dropdown-item" href="blog-single.html" title="Blog Post">{{subcategory.categoryName}}</a>
+                                </li>
+                            </ul>   
                         </li>
-
-                        <!-- <li class="dropdown">
-                            <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link dropdown-toggle" title="Posts" href="#">Bài viết hay</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="blog-single.html" title="Blog Post">Blog Post</a></li>
-                                <li><a class="dropdown-item" href="blog-single-cover-containr-full.html" title="Blog Post 2">Blog Post 2</a></li>
-                                <li><a class="dropdown-item" href="blog-single-cover-full.html" title="Blog Post 3">Blog Post 3</a></li>
-                                <li><a class="dropdown-item" href="blog-single-no-sidebar.html" title="Post No Sidebar">Post No Sidebar</a></li>
-                                <li><a class="dropdown-item" href="blog-single-no-sidebar-2.html" title="Post No Sidebar 2">Post No Sidebar 2</a></li>
-                                <li><a class="dropdown-item" href="blog-single-no-sidebar-3.html" title="Post No Sidebar 3">Post No Sidebar 3</a></li>
-                            </ul>
-                        </li>
-
-                        <li class="dropdown">
-                            <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link dropdown-toggle" title="Pages" href="#">Chia sẻ công nghệ</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="header-page.html" title="Header">Header</a></li>
-                                <li><a class="dropdown-item" href="footer-page.html" title="Footer">Footer</a></li>
-                                <li><a class="dropdown-item" href="404.html" title="404">404</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link dropdown-toggle" title="Pages" href="#">Chia sẻ lập trình</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="header-page.html" title="Header">Header</a></li>
-                                <li><a class="dropdown-item" href="footer-page.html" title="Footer">Footer</a></li>
-                                <li><a class="dropdown-item" href="404.html" title="404">404</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link dropdown-toggle" title="Pages" href="#">Tài liệu tham khảo</a>
-                            <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="header-page.html" title="Header">Header</a></li>
-                                <li><a class="dropdown-item" href="footer-page.html" title="Footer">Footer</a></li>
-                                <li><a class="dropdown-item" href="404.html" title="404">404</a></li>
-                            </ul>
-                        </li>
-                        <li class="dropdown">
-                            <i class="ddl-switch fa fa-angle-down"></i>
-                            <a class="nav-link" title="About Us" [routerLink]="['/about-us']" routerLinkActive="router-link-active">Thông tin</a>
-                        </li>
-                        <li>
-                            <a class="nav-link" title="Contact" [routerLink]="['/contact-us']" routerLinkActive="router-link-active">Liên hệ</a>
-                        </li> -->
                     </ul>
                 </div>
                 <div id="loginpanel-4" class="desktop-hide">
